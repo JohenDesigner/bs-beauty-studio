@@ -37,13 +37,6 @@ body {
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
-/* Grão de filme: tira o aspecto "liso de IA" */
-body::after {
-  content: ""; position: fixed; inset: -50%; z-index: 90; pointer-events: none; opacity: .07;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grao 1s steps(4) infinite;
-}
-@keyframes grao { 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -1%); } }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
@@ -262,4 +255,13 @@ h1 em, h2 em { color: var(--acento); }
   .momento, .momento--direita, .momento--centro { bottom: max(10vh, 100px); }
   .momento--centro { left: var(--gutter); right: var(--gutter); width: auto; transform: translateY(24px); }
   .momento--centro.ativo { transform: none; }
+}
+#servicos .arte--fundo { opacity: .32; }
+/* Imagens laterais inteiras (sem recorte/zoom), centralizadas na seção */
+@media (min-width: 861px) {
+  .arte--direita, .arte--esquerda {
+    --l: min(62vw, 1280px);
+    width: var(--l); height: calc(var(--l) * 9 / 16);
+    top: 0; bottom: 0; margin: auto 0;
+  }
 }
