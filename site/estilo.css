@@ -290,3 +290,28 @@ h1 em, h2 em { color: var(--acento); }
 .trabalho:hover img { transform: scale(1.05); filter: saturate(1) contrast(1.04); }
 .trabalho:hover { border-color: color-mix(in srgb, var(--acento) 50%, transparent); }
 @media (max-width: 860px) { .trabalhos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .trabalho span { left: 12px; right: 12px; bottom: 10px; } }
+
+/* ── Padrão orgânico da marca (fundo vivo) ─────────────────────────────── */
+body::before {
+  content: ""; position: fixed; inset: -12% -8%; z-index: -1; pointer-events: none;
+  background: url("assets/padrao-bs.svg?v=2") center / cover no-repeat;
+  transform: translate3d(0, calc(var(--padrao-y, 0) * -1px), 0);
+  animation: padrao-respira 38s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes padrao-respira {
+  from { scale: 1; rotate: 0deg; }
+  to   { scale: 1.08; rotate: -2.5deg; }
+}
+@media (prefers-reduced-motion: reduce) { body::before { animation: none; transform: none; } }
+
+/* Selo BS com o padrão (rodapé) */
+.selo-bs {
+  width: 58px; height: 58px; border-radius: 50%; flex: none;
+  display: grid; place-items: center; position: relative;
+  background: url("assets/padrao-bs.svg?v=2") 40% 30% / 260% auto no-repeat;
+  border: 1px solid color-mix(in srgb, var(--acento) 45%, transparent);
+  box-shadow: 0 0 0 4px rgb(34 21 14 / .6);
+}
+.selo-bs .monograma { font-size: 26px; }
+.rodape .marca { gap: 14px; }
