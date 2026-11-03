@@ -7,3 +7,10 @@ Site cinematográfico do BS Beauty Studio (Vila Marari, São Paulo): Laser Pro B
 - WhatsApp, e-mail do formulário e frames ficam em `site/config.js`.
 
 Site por [Labrego IA](https://labregoia.com.br) · Site Cinematográfico.
+
+## Agenda online
+
+- `site/agendar.html` — clientes escolhem serviço, dia e horário livre (seg–sáb, 10h–19h, passos de 30 min).
+- `site/painel.html` — painel da administração (login por link no e-mail): ver o dia, cancelar, bloquear horários.
+- Banco: projeto Supabase `bs-beauty-studio` (sa-east-1). Cada serviço é uma agenda própria; conflito bloqueado no banco (exclusion constraint).
+- Duração dos serviços: tabela `servicos` (coluna `duracao_min`). Administradores: tabela `admins`.

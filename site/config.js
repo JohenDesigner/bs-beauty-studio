@@ -15,6 +15,17 @@ window.SITE = {
     assunto: "Novo contato pelo site BS Beauty Studio",
   },
 
+  // Agenda online (Supabase). A chave anon é pública por natureza; a segurança fica nas regras (RLS) do banco.
+  agenda: {
+    url: "https://lthbgyusbbtxsatgzblk.supabase.co",
+    chave: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0aGJneXVzYmJ0eHNhdGd6YmxrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM3Mjc5MDIsImV4cCI6MjEwOTMwMzkwMn0.PgMcH-X9V8zN8KQN_gvmEDf4OSUfX1NDPM-aXWCSNZk",
+    abre: "10:00",
+    fecha: "19:00",
+    passoMin: 30,
+    antecedenciaMin: 60,
+    diasAFrente: 60,
+  },
+
   frames: {
     total: 150, // valor impresso pelo fatiar_frames.sh
     desktop: "assets/frames/desktop/f_{n}.webp?v=2",
