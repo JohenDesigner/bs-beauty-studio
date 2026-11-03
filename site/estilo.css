@@ -277,3 +277,16 @@ h1 em, h2 em { color: var(--acento); }
 .whats.visivel + .insta { transform: scale(1); }
 .whats.visivel + .insta:hover { transform: scale(1.07); }
 .insta svg { width: 28px; height: 28px; }
+
+/* ── Nossos trabalhos (fotos reais do Instagram) ───────────────────────── */
+.trab-cabecalho { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px; }
+.trab-cabecalho h2 { margin: 0; }
+.trabalhos { width: 100%; max-width: var(--largura); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.trabalho { position: relative; display: block; overflow: hidden; border-radius: var(--raio); border: 1px solid var(--linha); aspect-ratio: 4 / 5; background: var(--fundo-2); text-decoration: none; }
+.trabalho img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease), filter .6s; filter: saturate(.92) contrast(1.02); }
+.trabalho::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(34 21 14 / .88) 0%, rgb(34 21 14 / .15) 42%, transparent 60%); pointer-events: none; }
+.trabalho span { position: absolute; left: 18px; right: 18px; bottom: 16px; z-index: 1; font-family: var(--fonte-titulo); font-size: clamp(19px, 1.6vw, 24px); line-height: 1.15; color: var(--texto); }
+.trabalho small { display: block; font-family: var(--fonte-texto); font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--acento); margin-bottom: 4px; }
+.trabalho:hover img { transform: scale(1.05); filter: saturate(1) contrast(1.04); }
+.trabalho:hover { border-color: color-mix(in srgb, var(--acento) 50%, transparent); }
+@media (max-width: 860px) { .trabalhos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .trabalho span { left: 12px; right: 12px; bottom: 10px; } }
