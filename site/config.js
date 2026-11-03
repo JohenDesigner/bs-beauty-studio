@@ -9,7 +9,7 @@ window.SITE = {
   },
 
   contato: {
-    email: "johenartesgraficas@gmail.com",
+    email: "johenartegrafica@gmail.com",
     // Opcional: chave do Web3Forms (https://web3forms.com). Se vazio, usa FormSubmit.
     web3formsChave: "7fd1863f-4882-43a4-af5a-5fbcd02917f3",
     assunto: "Novo contato pelo site BS Beauty Studio",
