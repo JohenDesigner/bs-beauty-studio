@@ -252,7 +252,7 @@ h1 em, h2 em { color: var(--acento); }
 .botao--linha { background: transparent; color: var(--texto); border: 1px solid var(--linha); }
 .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
 @media (max-width: 860px) {
-  .momento, .momento--direita, .momento--centro { bottom: max(10vh, 100px); }
+  .momento, .momento--direita, .momento--centro { bottom: max(10vh, 164px); }
   .momento--centro { left: var(--gutter); right: var(--gutter); width: auto; transform: translateY(24px); }
   .momento--centro.ativo { transform: none; }
 }
@@ -265,3 +265,15 @@ h1 em, h2 em { color: var(--acento); }
     top: 0; bottom: 0; margin: auto 0;
   }
 }
+
+/* ── Instagram flutuante (acima do WhatsApp, aparece junto com ele) ───── */
+.insta {
+  position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: calc(max(18px, env(safe-area-inset-bottom)) + 70px); z-index: 60;
+  width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; color: #fff;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  box-shadow: 0 10px 30px rgb(0 0 0 / .35);
+  transform: scale(0); transition: transform .5s var(--ease) .06s;
+}
+.whats.visivel + .insta { transform: scale(1); }
+.whats.visivel + .insta:hover { transform: scale(1.07); }
+.insta svg { width: 28px; height: 28px; }
