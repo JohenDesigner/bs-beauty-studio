@@ -1,0 +1,30 @@
+{
+  "_assinatura": "Site Cinematográfico · Labrego IA · LBG-SC-2026-v1",
+  "nome": "BS Beauty Studio",
+  "slug": "bs-beauty-studio",
+  "negocio": "Studio de beleza: Laser Pro Beauty, sobrancelhas (brows), unhas (nails), cílios (lashs) e massagem. Fundadora Bianca Souza.",
+  "publico": "Mulheres de São Paulo, zona sul (Vila Marari / Vila Joaniza), que buscam atendimento premium com hora marcada",
+  "identidade": {
+    "cores": { "fundo": "#1a1310", "texto": "#f3ebe1", "acento": "#c9a45c" },
+    "fontes": { "titulo": "Cormorant Garamond", "texto": "Figtree" },
+    "clima": ["premium", "quente", "feminino"],
+    "tema": "escuro"
+  },
+  "logo": "",
+  "copy": {
+    "frase_abertura": "Realçamos a beleza de ser você.",
+    "diferenciais": ["Experiência premium em cada detalhe", "Reserve seu momento"],
+    "textos_prontos": "Laser Pro Beauty • Brows • Nails • Lashs • Masso",
+    "depoimentos_reais": []
+  },
+  "endereco": "R. Gonçalo Borges, 23 - Vila Marari, São Paulo - SP, 04403-320",
+  "horario": "Das 10h às 19h, com hora marcada",
+  "instagram": "https://www.instagram.com/bsbeautystudio.sp/",
+  "referencias": ["Instagram @bsbeautystudio.sp", "monograma BS dourado sobre marrom café"],
+  "whatsapp": { "numero": "5511989880015", "mensagem": "Olá! Vim pelo site e quero reservar meu momento ✨" },
+  "email_contato": "johenartesgraficas@gmail.com",
+  "secoes": ["sobre", "serviços", "como reservar", "localização", "contato"],
+  "credito_rodape": true,
+  "conceito": "",
+  "modelos": { "video": "bytedance/seedance-2.0", "imagem": "google/gemini-3-pro-image" }
+}
