@@ -75,11 +75,15 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
 }
 .momento {
   position: absolute; inset: auto var(--gutter) 12vh; max-width: 640px;
-  opacity: 0; transform: translateY(24px); filter: blur(6px);
-  transition: opacity .7s var(--ease), transform .9s var(--ease), filter .7s var(--ease);
+  transform: translateY(24px);
+  transition: transform .9s var(--ease);
   pointer-events: none;
 }
-.momento.ativo { opacity: 1; transform: none; filter: none; pointer-events: auto; }
+/* O fade fica no próprio painel: opacity/filter no pai desliga o backdrop-filter
+   durante a transição e o vidro "estala" no fim (entrada e saída). */
+.momento > .painel { opacity: 0; transition: opacity .7s var(--ease); }
+.momento.ativo { transform: none; pointer-events: auto; }
+.momento.ativo > .painel { opacity: 1; }
 .momento--direita { left: auto; right: var(--gutter); }
 .momento--centro { left: 50%; right: auto; transform: translate(-50%, 24px); text-align: center; width: min(640px, calc(100% - 2 * var(--gutter))); }
 .momento--centro.ativo { transform: translate(-50%, 0); }
@@ -224,7 +228,7 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .revelar, .momento:first-of-type { opacity: 1; transform: none; filter: none; }
+  .revelar, .momento:first-of-type, .momento:first-of-type > .painel { opacity: 1; transform: none; filter: none; }
   .cine { height: 100svh; }
   .momento:not(:first-of-type), .cine-dica { display: none; }
 }
